@@ -21,6 +21,8 @@ The image at `$pathToImage` will be overwritten by an optimized version which sh
 
 Here are some [example conversions](#example-conversions) that have been done by this package.
 
+Loving Laravel? Then head over to [the Laravel specific integration](https://github.com/spatie/laravel-image-optimizer).
+
 ## Postcardware
 
 You're free to use this package (it's [MIT-licensed](LICENSE.md)), but if it makes it to your production environment we highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using.
@@ -53,7 +55,7 @@ Here's how to install all the optimizers on Ubuntu:
 sudo apt-get install jpegoptim
 sudo apt-get install optipng
 sudo apt-get install pngquant
-sudo brew install -g svgo
+sudo npm install -g svgo
 sudo apt-get install gifsicle
 ```
 
@@ -85,7 +87,7 @@ PNGs will be made smaller by running them through two tools. The first one is [P
 
 ### SVGs
 
-SVGs will be minified by [SVGO](https://github.com/svg/svgo). SVGO's default configuration will be used, with the omission of the `cleanupIDs` plugin because that one is know to cause troubles when displaying multiple optimized SVGs on one page.
+SVGs will be minified by [SVGO](https://github.com/svg/svgo). SVGO's default configuration will be used, with the omission of the `cleanupIDs` plugin because that one is known to cause troubles when displaying multiple optimized SVGs on one page.
 
 Please be aware that SVGO can break your svg. You'll find more info on that in this [excellent blogpost](https://www.sarasoueidan.com/blog/svgo-tools/) by [Sara Soueidan](https://twitter.com/SaraSoueidan).
 
@@ -235,7 +237,7 @@ use Spatie\ImageOptimizer\OptimizerChainFactory;
 $optimizerChain = OptimizerChainFactory::create();
 
 $optimizerChain
-   ->setLogger(new MyLogger())
+   ->useLogger(new MyLogger())
    ->optimize($pathToImage);
 ```
 
